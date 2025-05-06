@@ -35,6 +35,26 @@ app.get('/student', async(req,res)=>{
     }
 });
 
+app.get('/job_id', async(req,res)=>{
+    try{
+        const result = await pool.query('select * from regions');
+        res.json(result.rows);
+    
+    }catch(err){
+        res.status(500).json({Error:err.message});
+    }
+});
+
+app.get('/job_id', async(req,res)=>{
+    try{
+        const result = await pool.query('select * from regions');
+        res.json(result.rows);
+    
+    }catch(err){
+        res.status(500).json({Error:err.message});
+    }
+});
+
 const PORT = process.env.PORT;
 app.listen(PORT,()=>{
     console.log(`connected successfully.... Running on PORT ${PORT}`);
